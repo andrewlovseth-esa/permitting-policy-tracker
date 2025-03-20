@@ -1,0 +1,196 @@
+@use "./abstracts" as *;
+
+.action {
+    display: grid;
+    align-items: start;
+    gap: $spacing-500;
+    padding: $spacing-500;
+    border-radius: $spacing-050;
+    border: 1px solid $gray-200;
+    background-color: $gray-0;
+    max-width: 56rem;
+    margin: 0 auto;
+
+    &__header {
+        padding-bottom: $spacing-300;
+        border-bottom: 1px solid $gray-200;
+    }
+
+    &__date {
+        display: inline-block;
+        padding-bottom: $spacing-100;
+    }
+
+    &__title {
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: $spacing-100 $spacing-300;
+        font-family: $old-standard;
+        font-weight: 400;
+        letter-spacing: -0.025em;
+        font-size: $type-size-500;
+    }
+
+    &__body {
+        position: relative;
+
+        &-wrapper {
+            display: grid;
+            gap: $spacing-500 $spacing-600;
+            align-items: start;
+            max-height: 8rem;
+            overflow: hidden;
+
+            @include mq(tablet) {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+            }
+
+            &::after {
+                display: block;
+                content: "";
+                width: 100%;
+                height: 8rem;
+                background: linear-gradient(to bottom, transparent 0%, white 100%);
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                transition: opacity 0.3s ease;
+            }
+        }
+
+        &.open {
+            .action__body-wrapper {
+                max-height: none;
+                overflow: visible;
+
+                &::after {
+                    opacity: 0;
+                }
+            }
+        }
+    }
+
+    &__toggle {
+        position: absolute;
+        bottom: -36px;
+        left: calc(50% - 3.5rem);
+        background: $blue;
+        border: 1px solid $blue;
+        border-radius: $spacing-050;
+        color: white;
+        padding: $spacing-100 $spacing-200;
+        z-index: 10;
+        font-family: $raleway;
+        font-size: 0.75rem;
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+        font-weight: bold;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: $spacing-200;
+        width: 7rem;
+        text-align: center;
+        cursor: pointer;
+        transition: all 300ms ease;
+
+        &:hover {
+            background: darken($blue, 5%);
+        }
+
+        &.open {
+            background: $gray-0;
+            color: $blue;
+            transition: all 300ms ease;
+
+            svg {
+                transform: rotate(180deg);
+                path {
+                    fill: $blue;
+                    transition: all 300ms ease;
+                }
+            }
+
+            &:hover {
+                background: $blue;
+                color: $gray-0;
+
+                svg {
+                    path {
+                        fill: $gray-0;
+                    }
+                }
+            }
+        }
+
+        svg {
+            transition: transform 0.3s ease;
+            path {
+                fill: $gray-0;
+            }
+        }
+    }
+
+    &__details {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: $spacing-500 $spacing-600;
+
+        .two-col {
+            grid-column: span 2;
+        }
+    }
+
+    &__detail {
+        .sub-header {
+            padding-bottom: $spacing-050;
+        }
+    }
+
+    &__analysis {
+        background: $gray-50;
+        border: 1px solid $gray-200;
+        border-radius: $spacing-050;
+        padding: $spacing-400;
+
+        &-header {
+            display: inline-block;
+            padding-bottom: $spacing-300;
+        }
+
+        &-list {
+            display: grid;
+            gap: $spacing-400;
+            align-items: start;
+        }
+
+        .analysis-header {
+            padding-bottom: $spacing-100;
+        }
+    }
+
+    &__link {
+        text-decoration: underline;
+        display: inline-flex;
+        align-items: center;
+        gap: $spacing-200;
+    }
+
+    &__value {
+        line-height: 1.2;
+    }
+
+    &__footer {
+        display: flex;
+        justify-content: flex-end;
+        padding-top: $spacing-300;
+        border-top: 1px solid $gray-200;
+
+        &-date {
+            font-size: $type-size-200;
+            color: $gray-500;
+            font-style: italic;
+        }
+    }
+}

@@ -55,3 +55,21 @@ function bearsmith_disable_classic_editor() {
 
 }
 add_action( 'admin_head', 'bearsmith_disable_classic_editor' );
+
+
+// Disable Gutenberg by post type
+function disable_gutenberg_by_post_type() {
+	// Add post types you want to disable Gutenberg for
+	$disabled_post_types = array(
+		'actions',
+	);
+
+	// Disable Gutenberg for specified post types
+	foreach ($disabled_post_types as $post_type) {
+		add_filter('use_block_editor_for_post_type', function($can_edit, $type) use ($post_type) {
+			if ($type === $post_type) return false;
+			return $can_edit;
+		}, 10, 2);
+	}
+}
+add_action('init', 'disable_gutenberg_by_post_type');
