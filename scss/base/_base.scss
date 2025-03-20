@@ -1,0 +1,17 @@
+@use "./abstracts" as *;
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: $spacing-800;
+}
+
+body {
+    background: $gray-0;
+}
+
+.site {
+    display: grid;
+    gap: 0;
+    grid-template-rows: auto 1fr auto;
+    min-height: 100vh;
+}

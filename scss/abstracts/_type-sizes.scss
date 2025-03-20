@@ -1,0 +1,13 @@
+// https://utopia.fyi/type/calculator/?c=320,16,1.125,1920,20,1.25,6,4,&s=0.75|0.5|0.25,1.5|2|3|4|6,s-l&g=s,l,xl,12
+
+$type-size-050: clamp(0.5119rem, 0.6469rem + -0.1125vw, 0.6244rem);
+$type-size-100: clamp(0.64rem, 0.715rem + -0.0625vw, 0.7025rem);
+$type-size-200: clamp(0.79rem, 0.788rem + 0.01vw, 0.8rem);
+$type-size-300: clamp(0.8888rem, 0.8665rem + 0.1113vw, 1rem);
+$type-size-400: clamp(1rem, 0.95rem + 0.25vw, 1.25rem);
+$type-size-500: clamp(1.125rem, 1.0375rem + 0.4375vw, 1.5625rem);
+$type-size-600: clamp(1.2656rem, 1.1281rem + 0.6875vw, 1.9531rem);
+$type-size-700: clamp(1.4238rem, 1.2203rem + 1.0175vw, 2.4413rem);
+$type-size-800: clamp(1.6019rem, 1.3119rem + 1.45vw, 3.0519rem);
+$type-size-900: clamp(1.8019rem, 1.3993rem + 2.0131vw, 3.815rem);
+$type-size-1000: clamp(2.0275rem, 1.4794rem + 2.7406vw, 4.7681rem);

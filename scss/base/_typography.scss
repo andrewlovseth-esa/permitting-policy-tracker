@@ -1,0 +1,48 @@
+@use "./abstracts" as *;
+
+body,
+button,
+input,
+select,
+optgroup,
+textarea {
+    font-family: $pt-serif;
+}
+
+a {
+    color: $gray-900;
+    text-decoration: none;
+}
+
+::-moz-selection {
+    background: $blue;
+    text-shadow: none;
+}
+
+::selection {
+    background: $blue;
+    color: white;
+    text-shadow: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-weight: 400;
+}
+
+.sans {
+    font-family: $raleway;
+}
+
+.sub-header {
+    font-family: $raleway;
+    font-size: $type-size-200;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: $blue;
+    font-weight: bold;
+}

@@ -1,0 +1,38 @@
+@use "./abstracts" as *;
+
+.content-grid {
+    display: grid;
+    gap: $spacing-600;
+    grid-template-columns:
+        [full-width-start] minmax(0, auto)
+        [content-start]
+        repeat(4, minmax(auto, 1fr))
+        [content-end]
+        minmax(0, auto) [full-width-end];
+
+    @include mq(tablet-small) {
+        grid-template-columns:
+            [full-width-start] minmax(0, auto)
+            [content-start]
+            repeat(8, minmax(auto, 1fr))
+            [content-end]
+            minmax(0, auto) [full-width-end];
+    }
+
+    @include mq(desktop-small) {
+        grid-template-columns:
+            [full-width-start] minmax(0, auto)
+            [content-start]
+            repeat(3, minmax(0, 6rem))
+            [narrow-start]
+            repeat(6, minmax(0, 6rem))
+            [narrow-end]
+            repeat(3, minmax(0, 6rem))
+            [content-end]
+            minmax(0, auto) [full-width-end];
+    }
+
+    & > * {
+        grid-column: content;
+    }
+}

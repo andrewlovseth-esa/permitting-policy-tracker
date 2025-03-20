@@ -1,0 +1,21 @@
+@use "./abstracts" as *;
+
+.photo {
+    img {
+        border-radius: $spacing-100;
+        border: 1px solid $gray-100;
+        box-shadow: 0 4px 12px rgba($gray-900, 0.2);
+        width: 100%;
+    }
+
+    &-caption {
+        margin-top: $spacing-100;
+        color: $gray-700;
+        font-style: italic;
+        text-align: right;
+
+        &.center {
+            text-align: center;
+        }
+    }
+}

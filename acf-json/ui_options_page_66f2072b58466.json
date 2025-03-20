@@ -1,0 +1,23 @@
+{
+    "key": "ui_options_page_66f2072b58466",
+    "title": "Header",
+    "active": true,
+    "menu_order": 0,
+    "page_title": "Header",
+    "menu_slug": "header",
+    "parent_slug": "options-general.php",
+    "advanced_configuration": 1,
+    "icon_url": "",
+    "menu_title": "",
+    "position": 7,
+    "redirect": false,
+    "description": "",
+    "menu_icon": [],
+    "update_button": "Update",
+    "updated_message": "Options Updated",
+    "capability": "edit_posts",
+    "data_storage": "options",
+    "post_id": "",
+    "autoload": 0,
+    "modified": 1727137795
+}

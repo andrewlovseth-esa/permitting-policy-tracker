@@ -1,0 +1,21 @@
+{
+  "name": "slocog",
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "start": "gulp"
+  },
+  "devDependencies": {
+    "gulp": "^4.0.2",
+    "gulp-sass": "^5.1.0",
+    "sass": "^1.56.0",
+    "gulp-sourcemaps": "^3.0.0",
+    "gulp-autoprefixer": "^8.0.0",
+    "browser-sync": "^2.26.14"
+  },
+  "description": "",
+  "main": "gulpfile.js",
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}

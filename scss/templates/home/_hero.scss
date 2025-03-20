@@ -1,0 +1,47 @@
+@use "./abstracts" as *;
+
+.hero {
+    gap: 0 2rem;
+    &__photo {
+        img {
+            border-radius: $spacing-050;
+            box-shadow: 0px 49px 30px 0px rgba(0, 0, 0, 0.05), 0px 22px 22px 0px rgba(0, 0, 0, 0.09),
+                0px 5px 12px 0px rgba(0, 0, 0, 0.1), 0px 88px 35px 0px rgba(0, 0, 0, 0.01),
+                0px 137px 38px 0px rgba(0, 0, 0, 0);
+        }
+    }
+
+    &__photo {
+        @include mq(tablet) {
+            grid-column: 2 / span 7;
+        }
+
+        @include mq(desktop-small) {
+            grid-column: 2 / span 9;
+        }
+    }
+
+    &__info {
+        padding: $spacing-500;
+        background-color: $gray-0;
+        border-radius: $spacing-050;
+        border: 1px solid $gray-200;
+        grid-column: 2 / span 8;
+        margin: 0 $spacing-400;
+        transform: translateY(-25%);
+
+        @include mq(tablet) {
+            grid-column: 4 / span 6;
+            margin: unset;
+            transform: translateY(-50%);
+        }
+
+        @include mq(desktop-small) {
+            grid-column: 8 / span 6;
+        }
+    }
+
+    &__headline {
+        padding-bottom: $spacing-200;
+    }
+}
