@@ -1,26 +1,19 @@
 // actions.js
 
 export function setupActions() {
-    document.addEventListener("DOMContentLoaded", function () {
-        const actionToggles = document.querySelectorAll(".action__toggle");
+    // Use event delegation on document.body to handle clicks
+    document.body.addEventListener("click", (event) => {
+        // Check if click target is within an actions list item
+        if (event.target.closest(".list-item")) {
+            const listItem = event.target.closest(".list-item");
 
-        actionToggles.forEach((toggle) => {
-            toggle.addEventListener("click", function () {
-                const action = this.closest(".action");
-                const body = action.querySelector(".action__body");
-                const label = this.querySelector(".action__toggle-label");
+            // Don't toggle if click is inside body or footer
+            const isClickInBody = event.target.closest(".list-item__body");
+            const isClickInFooter = event.target.closest(".list-item__footer");
 
-                // Toggle the open class
-                body.classList.toggle("open");
-                this.classList.toggle("open");
-
-                // Update the button label
-                if (body.classList.contains("open")) {
-                    label.textContent = "Collapse";
-                } else {
-                    label.textContent = "Expand";
-                }
-            });
-        });
+            if (!isClickInBody && !isClickInFooter) {
+                listItem.classList.toggle("open");
+            }
+        }
     });
 }

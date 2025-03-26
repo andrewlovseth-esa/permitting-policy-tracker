@@ -8,6 +8,7 @@
     align-items: center;
     position: relative;
     z-index: 1000;
+    margin-bottom: $spacing-400;
 
     @include mq(desktop-small) {
         display: none;
@@ -25,7 +26,7 @@
     box-shadow: 2px 0 5px rgba(0, 0, 0, 0.2);
     transform: translateX(-100%);
     transition: all 0.3s ease-in-out;
-    background: $gray-800;
+    background: $gray-950;
 
     @include mq(tablet) {
         display: none !important;

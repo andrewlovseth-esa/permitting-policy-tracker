@@ -68,8 +68,8 @@
         "default_term_enabled": "0"
     },
     "sort": 0,
-    "meta_box": "disabled",
+    "meta_box": "default",
     "meta_box_cb": "",
     "meta_box_sanitize_cb": "",
-    "modified": 1742487919
+    "modified": 1743008660
 }

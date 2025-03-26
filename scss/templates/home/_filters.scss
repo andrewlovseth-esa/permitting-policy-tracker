@@ -1,0 +1,72 @@
+@use "../../abstracts" as *;
+
+.filters {
+    &__wrapper {
+        display: flex;
+        align-items: flex-end;
+        gap: $spacing-300;
+        padding: $spacing-400;
+        background-color: $gray-50;
+        border-radius: $spacing-050;
+        border: 1px solid $gray-200;
+        margin-bottom: $spacing-600;
+    }
+
+    &__selects {
+        display: flex;
+        flex-wrap: wrap;
+        gap: $spacing-400;
+        flex: 1;
+    }
+
+    &__clear {
+        font-family: $raleway;
+        font-size: $type-size-200;
+        font-weight: 600;
+        color: $blue;
+        background: $gray-0;
+        border: 1px solid $blue;
+        border-radius: $spacing-050;
+        padding: $spacing-200 $spacing-300;
+        cursor: pointer;
+        transition: all 0.2s ease;
+
+        &:hover {
+            background: $blue;
+            color: $gray-0;
+        }
+    }
+
+    select {
+        padding: $spacing-200;
+        border: 1px solid $gray-200;
+        border-radius: $spacing-050;
+        background-color: $gray-0;
+        font-family: $raleway;
+        font-weight: 500;
+        font-size: $type-size-200;
+        color: $gray-800;
+        cursor: pointer;
+        min-width: 200px;
+        width: 100%;
+
+        &:focus {
+            outline: none;
+            border-color: $blue;
+        }
+    }
+
+    .filter-detail {
+        flex: 1;
+        label {
+            display: block;
+            padding-bottom: $spacing-200;
+            font-family: $raleway;
+            font-size: 0.75rem;
+            font-weight: bold;
+            color: $gray-1000;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+    }
+}

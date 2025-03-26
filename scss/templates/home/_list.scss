@@ -2,4 +2,10 @@
 
 .list {
     padding-bottom: $spacing-800;
+    gap: $spacing-800 $spacing-600;
+}
+
+.date-group {
+    display: grid;
+    gap: $spacing-300;
 }

@@ -4,7 +4,7 @@
     display: grid;
     align-items: start;
     gap: $spacing-500;
-    padding: $spacing-500;
+    padding: $spacing-400 $spacing-500;
     border-radius: $spacing-050;
     border: 1px solid $gray-200;
     background-color: $gray-0;
@@ -39,8 +39,10 @@
             display: grid;
             gap: $spacing-500 $spacing-600;
             align-items: start;
-            max-height: 8rem;
+            height: 5rem;
             overflow: hidden;
+            interpolate-size: allow-keywords;
+            transition: height 0.3s ease, overflow 0.3s ease 300ms;
 
             @include mq(tablet) {
                 grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -55,13 +57,13 @@
                 position: absolute;
                 bottom: 0;
                 left: 0;
-                transition: opacity 0.3s ease;
+                transition: opacity 0.3s ease 100ms;
             }
         }
 
         &.open {
             .action__body-wrapper {
-                max-height: none;
+                height: auto;
                 overflow: visible;
 
                 &::after {
@@ -94,10 +96,6 @@
         text-align: center;
         cursor: pointer;
         transition: all 300ms ease;
-
-        &:hover {
-            background: darken($blue, 5%);
-        }
 
         &.open {
             background: $gray-0;
@@ -184,8 +182,12 @@
     &__footer {
         display: flex;
         justify-content: flex-end;
-        padding-top: $spacing-300;
+        padding-top: $spacing-500;
         border-top: 1px solid $gray-200;
+
+        @include mq(tablet) {
+            padding-top: $spacing-300;
+        }
 
         &-date {
             font-size: $type-size-200;

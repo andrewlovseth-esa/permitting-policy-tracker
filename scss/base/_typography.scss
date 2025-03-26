@@ -54,7 +54,7 @@ h6 {
 .badge {
     display: inline-block;
     font-family: $raleway;
-    font-size: $type-size-100;
+    font-size: $type-size-050;
     text-transform: uppercase;
     letter-spacing: 0.1em;
     font-weight: bold;
@@ -70,18 +70,18 @@ h6 {
     align-items: center;
     gap: $spacing-100;
     font-family: $raleway;
-    font-size: $type-size-100;
+    font-size: 0.5rem;
     text-transform: uppercase;
     letter-spacing: 0.1em;
     font-weight: bold;
-    border: 1px solid transparent;
+    border: 1px solid $gray-100;
     line-height: 1;
-    padding: 6px 0 4px;
+    padding: 6px $spacing-200 4px;
 
     &__indicatator {
         display: inline-block;
-        width: 8px;
-        height: 8px;
+        width: 5px;
+        height: 5px;
         border-radius: 50%;
     }
 }

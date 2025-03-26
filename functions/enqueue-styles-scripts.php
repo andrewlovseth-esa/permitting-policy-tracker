@@ -11,6 +11,16 @@ function bearsmith_enqueue_styles_and_scripts() {
     $js_version = filemtime(get_stylesheet_directory() . '/js/main.js');
 
     wp_enqueue_style( 'main-css', get_stylesheet_directory_uri() . '/style.css', array(), $css_version );
+
+    wp_enqueue_script(
+        'htmx', 
+        'https://unpkg.com/htmx.org@2.0.4/dist/htmx.min.js',
+        array(), 
+        null, 
+        false
+    );
+
+
     wp_enqueue_script( 'main-js', get_stylesheet_directory_uri() . '/js/main.js', array(), $js_version );
 
 }

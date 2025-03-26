@@ -73,11 +73,7 @@
             font-weight: 600;
             text-transform: uppercase;
             letter-spacing: 0.05em;
-            color: #6d6e71;
-
-            @include mq(desktop-medium) {
-                font-size: 1rem;
-            }
+            color: $gray-950;
 
             &:hover,
             &.active {
