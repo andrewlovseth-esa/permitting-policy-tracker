@@ -96,7 +96,7 @@
             hx-vals='{"action": "filter_actions"}'
             onclick="document.getElementById('document_type').value = ''; document.getElementById('action_status').value = ''; document.getElementById('agency').value = '';"
         >
-            Clear Filters!!!
+            Clear Filters
         </button>
     </div>
 </section>
