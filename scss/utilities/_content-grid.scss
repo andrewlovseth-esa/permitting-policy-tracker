@@ -23,11 +23,11 @@
         grid-template-columns:
             [full-width-start] minmax(0, auto)
             [content-start]
-            repeat(3, minmax(0, 6rem))
+            repeat(3, minmax(0, 4.5rem))
             [narrow-start]
-            repeat(6, minmax(0, 6rem))
+            repeat(6, minmax(0, 4.5rem))
             [narrow-end]
-            repeat(3, minmax(0, 6rem))
+            repeat(3, minmax(0, 4.5rem))
             [content-end]
             minmax(0, auto) [full-width-end];
     }

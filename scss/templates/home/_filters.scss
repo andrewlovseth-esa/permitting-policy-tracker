@@ -47,8 +47,7 @@
         font-size: $type-size-200;
         color: $gray-800;
         cursor: pointer;
-        min-width: 200px;
-        width: 100%;
+        width: 200px;
 
         &:focus {
             outline: none;
@@ -57,7 +56,6 @@
     }
 
     .filter-detail {
-        flex: 1;
         label {
             display: block;
             padding-bottom: $spacing-200;

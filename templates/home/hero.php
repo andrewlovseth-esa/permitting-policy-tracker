@@ -16,7 +16,7 @@
 
     <div class="hero__info">
         <?php if($headline): ?>
-            <h2 class="hero__headline | sub-header"><?php echo $headline; ?></h2>
+            <h1 class="hero__headline"><?php echo $headline; ?></h1>
         <?php endif; ?>
 
         <?php if($copy): ?>

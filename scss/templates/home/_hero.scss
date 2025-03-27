@@ -1,47 +1,49 @@
 @use "./abstracts" as *;
 
 .hero {
-    gap: 0 2rem;
+    margin-bottom: $spacing-600;
     &__photo {
-        img {
-            border-radius: $spacing-050;
-            box-shadow: 0px 49px 30px 0px rgba(0, 0, 0, 0.05), 0px 22px 22px 0px rgba(0, 0, 0, 0.09),
-                0px 5px 12px 0px rgba(0, 0, 0, 0.1), 0px 88px 35px 0px rgba(0, 0, 0, 0.01),
-                0px 137px 38px 0px rgba(0, 0, 0, 0);
-        }
-    }
+        grid-column: 1 / -1;
+        grid-row: 1 / span 2;
+        z-index: 1;
+        aspect-ratio: 16 / 6;
 
-    &__photo {
         @include mq(tablet) {
-            grid-column: 2 / span 7;
+            aspect-ratio: 16 / 4;
         }
 
-        @include mq(desktop-small) {
-            grid-column: 2 / span 9;
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
         }
     }
 
     &__info {
+        align-self: end;
+        grid-row: 2 / span 2;
+        z-index: 2;
         padding: $spacing-500;
         background-color: $gray-0;
         border-radius: $spacing-050;
         border: 1px solid $gray-200;
-        grid-column: 2 / span 8;
-        margin: 0 $spacing-400;
-        transform: translateY(-25%);
+        grid-column: 2 / span 4;
+        box-shadow: 0px 49px 30px 0px rgba(0, 0, 0, 0.05), 0px 22px 22px 0px rgba(0, 0, 0, 0.09),
+            0px 5px 12px 0px rgba(0, 0, 0, 0.1), 0px 88px 35px 0px rgba(0, 0, 0, 0.01),
+            0px 137px 38px 0px rgba(0, 0, 0, 0);
 
-        @include mq(tablet) {
-            grid-column: 4 / span 6;
-            margin: unset;
-            transform: translateY(-50%);
+        @include mq(tablet-small) {
+            grid-column: 2 / span 6;
         }
 
         @include mq(desktop-small) {
-            grid-column: 8 / span 6;
+            grid-column: 2 / span 8;
         }
     }
 
     &__headline {
+        color: $teal;
+        font-size: $type-size-600;
         padding-bottom: $spacing-200;
     }
 }

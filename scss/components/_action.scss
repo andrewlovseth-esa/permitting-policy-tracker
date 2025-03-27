@@ -3,12 +3,13 @@
 .action {
     display: grid;
     align-items: start;
-    padding: $spacing-300 $spacing-400;
+    padding: $spacing-300;
     border-radius: $spacing-050;
     border: 1px solid $gray-200;
     background-color: $gray-0;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.05);
     transition: all 0.3s ease;
+
     &:hover {
         cursor: pointer;
     }
@@ -37,11 +38,15 @@
 
         &-text {
             display: block;
-            line-height: 1;
+            line-height: 1.1;
             font-weight: 400;
             letter-spacing: -0.025em;
-            font-size: 1.125rem;
+            font-size: 1rem;
             transition: all 0.3s ease;
+
+            @include mq(tablet) {
+                font-size: 1.125rem;
+            }
         }
     }
 

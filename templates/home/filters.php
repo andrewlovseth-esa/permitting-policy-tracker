@@ -5,6 +5,34 @@
     >
         <div class="filters__selects">
             <div class="filter-detail">
+                <label for="agency">Agency</label>
+                <select 
+                    id="agency"
+                    name="agency" 
+                    hx-get="/wp-admin/admin-ajax.php" 
+                    hx-trigger="change" 
+                    hx-include="[name='document_type'], [name='action_status']"
+                    hx-vals='{"action": "filter_actions"}'
+                >
+                    <option value="">- Select -</option>
+                    <?php
+                    $terms = get_terms([
+                        'taxonomy' => 'agency',
+                        'hide_empty' => true
+                    ]);
+                    
+                    foreach($terms as $term) {
+                        echo sprintf(
+                            '<option value="%s">%s</option>',
+                            esc_attr($term->slug),
+                            esc_html($term->name)
+                        );
+                    }
+                    ?>
+                </select>
+            </div>
+
+            <div class="filter-detail">
                 <label for="document_type">Type</label>
                 <select 
                     id="document_type"
@@ -46,34 +74,6 @@
                     <?php
                     $terms = get_terms([
                         'taxonomy' => 'action-status',
-                        'hide_empty' => true
-                    ]);
-                    
-                    foreach($terms as $term) {
-                        echo sprintf(
-                            '<option value="%s">%s</option>',
-                            esc_attr($term->slug),
-                            esc_html($term->name)
-                        );
-                    }
-                    ?>
-                </select>
-            </div>
-
-            <div class="filter-detail">
-                <label for="agency">Agency</label>
-                <select 
-                    id="agency"
-                    name="agency" 
-                    hx-get="/wp-admin/admin-ajax.php" 
-                    hx-trigger="change" 
-                    hx-include="[name='document_type'], [name='action_status']"
-                    hx-vals='{"action": "filter_actions"}'
-                >
-                    <option value="">- Select -</option>
-                    <?php
-                    $terms = get_terms([
-                        'taxonomy' => 'agency',
                         'hide_empty' => true
                     ]);
                     
