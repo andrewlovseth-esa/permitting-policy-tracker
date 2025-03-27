@@ -1,0 +1,27 @@
+@use "./abstracts" as *;
+
+@forward "logo";
+
+@forward "nav";
+
+@forward "mobile-drawer";
+
+@forward "hamburger";
+
+.site-header {
+    background-color: $gray-0;
+    padding: $spacing-400 0;
+    align-items: center;
+    position: relative;
+    z-index: 1000;
+
+    @include mq(desktop-small) {
+        padding: $spacing-600 0;
+    }
+
+    &__wrapper {
+        display: grid;
+        grid-template-columns: auto 1fr;
+        align-items: center;
+    }
+}

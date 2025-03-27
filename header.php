@@ -11,11 +11,7 @@
 <?php wp_body_open(); ?>
 
 <div id="page" class="site">
-
-	<header class="site-header | content-grid">
-		<?php get_template_part('components/header/mobile-nav'); ?>
-
-		<?php get_template_part('components/header/desktop-nav'); ?>
-	</header>
-    
+	
+	<?php get_template_part('components/header/header'); ?>
+	
     <main class="site-content">

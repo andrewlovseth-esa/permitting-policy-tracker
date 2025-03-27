@@ -1,0 +1,24 @@
+@use "./abstracts" as *;
+
+#mobile-drawer {
+    position: fixed;
+    top: 0;
+    left: -100%;
+    height: 100vh;
+    width: 75%;
+    z-index: 999;
+    color: $gray-0;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.2);
+    transform: translateX(-100%);
+    transition: all 0.3s ease-in-out;
+    background: $gray-950;
+
+    @include mq(tablet) {
+        display: none !important;
+    }
+
+    &.is-open {
+        transform: translateX(0);
+        left: 0;
+    }
+}

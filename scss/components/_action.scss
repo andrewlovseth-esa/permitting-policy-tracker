@@ -3,17 +3,25 @@
 .action {
     display: grid;
     align-items: start;
-    gap: $spacing-500;
-    padding: $spacing-400 $spacing-500;
+    padding: $spacing-300 $spacing-400;
     border-radius: $spacing-050;
     border: 1px solid $gray-200;
     background-color: $gray-0;
-    max-width: 56rem;
-    margin: 0 auto;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.05);
+    transition: all 0.3s ease;
+    &:hover {
+        cursor: pointer;
+    }
 
     &__header {
-        padding-bottom: $spacing-300;
-        border-bottom: 1px solid $gray-200;
+        display: grid;
+        align-items: center;
+        grid-template-columns: 1fr auto;
+        gap: $spacing-300;
+
+        svg {
+            transition: transform 0.3s ease;
+        }
     }
 
     &__date {
@@ -25,107 +33,66 @@
         display: flex;
         align-items: center;
         flex-wrap: wrap;
-        gap: $spacing-100 $spacing-300;
-        font-family: $old-standard;
-        font-weight: 400;
-        letter-spacing: -0.025em;
-        font-size: $type-size-500;
+        gap: $spacing-200 $spacing-300;
+
+        &-text {
+            display: block;
+            line-height: 1;
+            font-weight: 400;
+            letter-spacing: -0.025em;
+            font-size: 1.125rem;
+            transition: all 0.3s ease;
+        }
+    }
+
+    &.open {
+        @include mq(tablet) {
+            padding: $spacing-500 $spacing-500;
+        }
+
+        .action {
+            &__header {
+                svg {
+                    transform: rotate(180deg);
+                }
+            }
+
+            &__title {
+                &-text {
+                    @include mq(tablet) {
+                        font-size: 1.375rem;
+                        transform: translateY(0);
+                    }
+                }
+            }
+
+            &__body {
+                height: auto;
+                cursor: default;
+                overflow: visible;
+            }
+
+            &__footer {
+                cursor: default;
+            }
+        }
     }
 
     &__body {
-        position: relative;
+        height: 0;
+        overflow: hidden;
+        interpolate-size: allow-keywords;
+        transition: height 0.3s ease, overflow 0.3s ease 300ms;
 
         &-wrapper {
             display: grid;
             gap: $spacing-500 $spacing-600;
             align-items: start;
-            height: 5rem;
-            overflow: hidden;
-            interpolate-size: allow-keywords;
-            transition: height 0.3s ease, overflow 0.3s ease 300ms;
-
+            padding: $spacing-500 0;
+            border-top: 1px solid $gray-100;
+            margin-top: $spacing-300;
             @include mq(tablet) {
                 grid-template-columns: repeat(2, minmax(0, 1fr));
-            }
-
-            &::after {
-                display: block;
-                content: "";
-                width: 100%;
-                height: 8rem;
-                background: linear-gradient(to bottom, transparent 0%, white 100%);
-                position: absolute;
-                bottom: 0;
-                left: 0;
-                transition: opacity 0.3s ease 100ms;
-            }
-        }
-
-        &.open {
-            .action__body-wrapper {
-                height: auto;
-                overflow: visible;
-
-                &::after {
-                    opacity: 0;
-                }
-            }
-        }
-    }
-
-    &__toggle {
-        position: absolute;
-        bottom: -36px;
-        left: calc(50% - 3.5rem);
-        background: $blue;
-        border: 1px solid $blue;
-        border-radius: $spacing-050;
-        color: white;
-        padding: $spacing-100 $spacing-200;
-        z-index: 10;
-        font-family: $raleway;
-        font-size: 0.75rem;
-        text-transform: uppercase;
-        letter-spacing: 0.1em;
-        font-weight: bold;
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
-        gap: $spacing-200;
-        width: 7rem;
-        text-align: center;
-        cursor: pointer;
-        transition: all 300ms ease;
-
-        &.open {
-            background: $gray-0;
-            color: $blue;
-            transition: all 300ms ease;
-
-            svg {
-                transform: rotate(180deg);
-                path {
-                    fill: $blue;
-                    transition: all 300ms ease;
-                }
-            }
-
-            &:hover {
-                background: $blue;
-                color: $gray-0;
-
-                svg {
-                    path {
-                        fill: $gray-0;
-                    }
-                }
-            }
-        }
-
-        svg {
-            transition: transform 0.3s ease;
-            path {
-                fill: $gray-0;
             }
         }
     }

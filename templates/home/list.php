@@ -68,7 +68,7 @@
                         
                 <?php $current_date = $post_date; endif; ?>
 
-                <?php get_template_part('components/actions/list-item'); ?>
+                <?php get_template_part('components/actions/action'); ?>
 
             <?php endwhile; ?>
 
@@ -79,7 +79,7 @@
 
         <?php else : ?>
             
-            <?php get_template_part('components/actions/list-item-none'); ?>
+            <?php get_template_part('components/actions/action-none'); ?>
         
     <?php endif; wp_reset_postdata(); ?>
 </section>

@@ -23,16 +23,16 @@
         font-family: $raleway;
         font-size: $type-size-200;
         font-weight: 600;
-        color: $blue;
+        color: $teal;
         background: $gray-0;
-        border: 1px solid $blue;
+        border: 1px solid $teal;
         border-radius: $spacing-050;
         padding: $spacing-200 $spacing-300;
         cursor: pointer;
         transition: all 0.2s ease;
 
         &:hover {
-            background: $blue;
+            background: $teal;
             color: $gray-0;
         }
     }
@@ -52,7 +52,7 @@
 
         &:focus {
             outline: none;
-            border-color: $blue;
+            border-color: $teal;
         }
     }
 

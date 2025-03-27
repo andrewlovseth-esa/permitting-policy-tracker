@@ -1,0 +1,22 @@
+@use "./abstracts" as *;
+
+.site-logo {
+    &__link {
+        display: flex;
+        align-items: flex-end;
+        gap: $spacing-400;
+    }
+
+    &__image {
+        display: block;
+        width: 4rem;
+
+        @include mq(desktop-small) {
+            width: 6.5rem;
+        }
+
+        img {
+            width: 100%;
+        }
+    }
+}

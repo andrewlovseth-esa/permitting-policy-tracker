@@ -3,7 +3,7 @@
 export function setupMobileNav() {
     document.addEventListener("DOMContentLoaded", function () {
         const navTrigger = document.querySelector(".js-nav-trigger");
-        const mobileNav = document.getElementById("mobile-nav");
+        const mobileNav = document.getElementById("mobile-drawer");
         const overlay = document.createElement("div");
         const hamburger = document.querySelector(".hamburger");
 

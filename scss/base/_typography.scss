@@ -6,7 +6,7 @@ input,
 select,
 optgroup,
 textarea {
-    font-family: $pt-serif;
+    font-family: $raleway;
 }
 
 a {
@@ -15,12 +15,12 @@ a {
 }
 
 ::-moz-selection {
-    background: $blue;
+    background: $teal;
     text-shadow: none;
 }
 
 ::selection {
-    background: $blue;
+    background: $teal;
     color: white;
     text-shadow: none;
 }
@@ -34,16 +34,11 @@ h6 {
     font-weight: 400;
 }
 
-.sans {
-    font-family: $raleway;
-}
-
 .sub-header {
-    font-family: $raleway;
     font-size: $type-size-200;
     text-transform: uppercase;
     letter-spacing: 0.1em;
-    color: $blue;
+    color: $teal;
     font-weight: bold;
 }
 
@@ -54,7 +49,7 @@ h6 {
 .badge {
     display: inline-block;
     font-family: $raleway;
-    font-size: $type-size-050;
+    font-size: 0.6125rem;
     text-transform: uppercase;
     letter-spacing: 0.1em;
     font-weight: bold;
@@ -63,6 +58,12 @@ h6 {
     border: 1px solid $gray-200;
     line-height: 1;
     padding: 6px $spacing-200 4px;
+
+    &.dark {
+        background-color: $gray-800;
+        border-color: $gray-800;
+        color: $gray-0;
+    }
 }
 
 .status {
@@ -70,11 +71,11 @@ h6 {
     align-items: center;
     gap: $spacing-100;
     font-family: $raleway;
-    font-size: 0.5rem;
+    font-size: 0.6125rem;
     text-transform: uppercase;
     letter-spacing: 0.1em;
     font-weight: bold;
-    border: 1px solid $gray-100;
+    border: 1px solid $gray-200;
     line-height: 1;
     padding: 6px $spacing-200 4px;
 
