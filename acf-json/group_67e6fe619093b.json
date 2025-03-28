@@ -40,6 +40,27 @@
             "default_value": "",
             "allow_in_bindings": 0,
             "placeholder": ""
+        },
+        {
+            "key": "field_67e717d2a6de8",
+            "label": "Likely Effects of Current Policy",
+            "name": "likely_effects_of_current_policy",
+            "aria-label": "",
+            "type": "wysiwyg",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "allow_in_bindings": 0,
+            "tabs": "all",
+            "toolbar": "full",
+            "media_upload": 0,
+            "delay": 0
         }
     ],
     "location": [
@@ -74,5 +95,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1743191757
+    "modified": 1743198174
 }

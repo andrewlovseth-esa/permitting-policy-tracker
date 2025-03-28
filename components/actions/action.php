@@ -99,9 +99,9 @@
                                 <h4 class="analysis-header">Policies Rescinded</h4>
 
                                 <div class="rescinded-policies">
-                                    <?php foreach($rescinded_policies as $policy) : ?>
-                                        <?php get_template_part('components/actions/rescinded-policy', null, ['policy' => $policy]); ?>
-                                    <?php endforeach; ?>
+                                    <?php $index = 1; foreach($rescinded_policies as $policy) : ?>
+                                        <?php get_template_part('components/actions/rescinded-policy', null, ['policy' => $policy, 'index' => $index]); ?>
+                                    <?php $index++; endforeach; ?>
                                 </div>
             
                             </div>

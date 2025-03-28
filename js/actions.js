@@ -21,3 +21,18 @@ export function setupActions() {
         }
     });
 }
+
+export function rescindedPolicyToggle() {
+    document.addEventListener("DOMContentLoaded", function () {
+        const rescindedPolicyToggles = document.querySelectorAll(".js-rescinded-policy-toggle");
+        const rescindedPolicyBodies = document.querySelectorAll(".js-rescinded-policy-body");
+
+        rescindedPolicyToggles.forEach((toggle, index) => {
+            toggle.addEventListener("click", function (e) {
+                e.preventDefault();
+                toggle.classList.toggle("open");
+                rescindedPolicyBodies[index].classList.toggle("open");
+            });
+        });
+    });
+}
