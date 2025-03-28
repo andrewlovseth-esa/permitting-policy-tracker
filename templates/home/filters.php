@@ -116,17 +116,35 @@
                         ?>
                     </select>
                 </div>
+
+                <div class="filter-detail">
+                    <label for="keyword-search">Search</label>
+                    <input 
+                        type="text" 
+                        id="keyword-search" 
+                        name="keyword" 
+                        placeholder="Search..."
+                        hx-get="/wp-admin/admin-ajax.php"
+                        hx-trigger="keyup changed delay:200ms"
+                        hx-include="[name='document_type'], [name='action_status'], [name='agency'], [name='sub_component']"
+                        hx-vals='{"action": "filter_actions"}'
+                    >
+                </div>
             </div>
 
-            <button 
-                class="filters__clear"
-                hx-get="/wp-admin/admin-ajax.php"
-                hx-trigger="click"
-                hx-vals='{"action": "filter_actions"}'
-                onclick="document.getElementById('document_type').value = ''; document.getElementById('action_status').value = ''; document.getElementById('agency').value = '';"
-            >
-                Clear Filters
-            </button>
+            <div class="filters__clear-wrapper">
+                <button 
+                    class="filters__clear"
+                    hx-get="/wp-admin/admin-ajax.php"
+                    hx-trigger="click"
+                    hx-vals='{"action": "filter_actions"}'
+                    onclick="document.getElementById('document_type').value = ''; document.getElementById('action_status').value = ''; document.getElementById('agency').value = ''; document.getElementById('keyword-search').value = '';"
+                >
+                    Clear Filters
+                </button>
+            </div>
+
+
         </div>
 
     </div>

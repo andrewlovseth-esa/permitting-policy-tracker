@@ -13,6 +13,12 @@
             // Initialize tax query array if we have any taxonomy filters
             $tax_query = array();
 
+            // Add keyword search if set
+            if(isset($_GET['keyword']) && !empty($_GET['keyword'])) {
+                $keyword = sanitize_text_field($_GET['keyword']);
+                $args['s'] = $keyword; // This searches the post title
+            }
+
             // Add document type filter if set
             if(isset($_GET['document_type']) && !empty($_GET['document_type'])) {
                 $tax_query[] = array(
@@ -76,29 +82,26 @@
 
                 <?php if ( $query->have_posts() ) : ?>
 
-
-
-                <div class="actions-list__body | list">
+                    <div class="actions-list__body | list">
             
-                    <?php while ( $query->have_posts() ) : $query->the_post(); ?>
+                        <?php while ( $query->have_posts() ) : $query->the_post(); ?>
 
-                    <?php            
-                        $post_date = get_the_date('F j, Y');
-                    ?>
+                            <?php
+                                $post_date = get_the_date('F j, Y'); 
+                                if ($current_date !== $post_date) :
+                            ?>
 
-                    <?php if ($current_date !== $post_date) : ?>
-
-                        <!-- Close previous date group -->
-                        <?php if ($current_date !== '') : ?>
-                            </div>
-                        <?php endif; ?>
-                        
-                        <div class="date-group">
-                            <h2 class="date-header | sub-header"><?php echo $post_date; ?></h2>
+                            <!-- Close previous date group -->
+                            <?php if ($current_date !== '') : ?>
+                                </div>
+                            <?php endif; ?>
                             
-                    <?php $current_date = $post_date; endif; ?>
+                            <div class="date-group">
+                                <h2 class="date-header | sub-header"><?php echo $post_date; ?></h2>
+                            
+                            <?php $current_date = $post_date; endif; ?>
 
-                    <?php get_template_part('components/actions/action'); ?>
+                        <?php get_template_part('components/actions/action'); ?>
 
                     <?php endwhile; ?>
 
@@ -111,7 +114,6 @@
             <?php else : ?>
                 
                 <?php get_template_part('components/actions/action-none'); ?>
-
 
     <?php endif; wp_reset_postdata(); ?>
 

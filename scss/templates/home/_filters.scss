@@ -68,9 +68,6 @@
 
     &__body {
         width: 100%;
-        display: flex;
-        align-items: flex-end;
-        gap: $spacing-300;
         padding: $spacing-400;
         padding-top: 0;
         interpolate-size: allow-keywords;
@@ -91,10 +88,9 @@
     }
 
     &__selects {
-        display: flex;
-        flex-wrap: wrap;
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
         gap: $spacing-400;
-        flex: 1;
     }
 
     &__clear {
@@ -113,6 +109,13 @@
             background: $orange;
             color: $gray-0;
         }
+
+        &-wrapper {
+            display: flex;
+            justify-content: flex-end;
+            width: 100%;
+            padding-top: $spacing-400;
+        }
     }
 
     select {
@@ -125,7 +128,24 @@
         font-size: $type-size-200;
         color: $gray-800;
         cursor: pointer;
-        width: 200px;
+        width: 100%;
+
+        &:focus {
+            outline: none;
+            border-color: $teal;
+        }
+    }
+
+    input[type="text"] {
+        padding: $spacing-200;
+        border: 1px solid $gray-200;
+        border-radius: $spacing-050;
+        background-color: $gray-0;
+        font-family: $raleway;
+        font-weight: 500;
+        font-size: $type-size-200;
+        color: $gray-800;
+        width: 100%;
 
         &:focus {
             outline: none;
