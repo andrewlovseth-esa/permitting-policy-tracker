@@ -53,3 +53,17 @@ export function setupMobileNav() {
         });
     });
 }
+
+export function setupMobileFilterToggle() {
+    document.addEventListener("DOMContentLoaded", function () {
+        const filterToggle = document.querySelector(".js-filter-toggle");
+        const filterBody = document.querySelector(".js-filter-body");
+        const filtersHeader = document.querySelector(".filters__header");
+
+        filterToggle.addEventListener("click", function (e) {
+            e.preventDefault();
+            filterBody.classList.toggle("closed");
+            filtersHeader.classList.toggle("open");
+        });
+    });
+}

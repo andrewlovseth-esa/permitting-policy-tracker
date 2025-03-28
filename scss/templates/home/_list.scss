@@ -17,6 +17,7 @@
         padding: $spacing-200 $spacing-300;
         display: inline-block;
         border: 1px solid $orange;
+        white-space: nowrap;
     }
 
     &__total {
@@ -71,6 +72,11 @@
         display: flex;
         align-items: center;
         gap: $spacing-300;
+        flex-wrap: wrap;
+
+        &--text {
+            white-space: nowrap;
+        }
     }
 }
 

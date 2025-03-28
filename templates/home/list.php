@@ -63,7 +63,7 @@
             
                 <div class="actions-list__header">
                     <h2 class="actions-list__title">
-                        List of Actions
+                        <span class="actions-list__title--text">List of Actions</span>
                         
                         <span class="count">
                             <span class="count__total">Total Actions: <?php echo $total_posts; ?></span>
