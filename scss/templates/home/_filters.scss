@@ -56,6 +56,11 @@
     }
 
     .filter-detail {
+        &.disabled {
+            label {
+                color: $gray-400;
+            }
+        }
         label {
             display: block;
             padding-bottom: $spacing-200;

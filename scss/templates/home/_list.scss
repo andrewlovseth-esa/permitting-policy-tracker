@@ -1,8 +1,55 @@
 @use "./abstracts" as *;
 
 .list {
+    display: grid;
     padding-bottom: $spacing-800;
     gap: $spacing-800 $spacing-600;
+    align-items: start;
+}
+
+.count {
+    display: flex;
+    font-size: 0.6125rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+
+    span {
+        line-height: 1;
+        padding: $spacing-200 $spacing-300;
+        display: inline-block;
+        border: 1px solid $orange;
+    }
+
+    &__total {
+        background-color: $orange;
+        color: $gray-0;
+        border-radius: $spacing-050;
+    }
+
+    &__filtered {
+        background-color: $gray-0;
+        color: $orange;
+        border-top-right-radius: $spacing-050;
+        border-bottom-right-radius: $spacing-050;
+    }
+
+    &:has(.count__filtered) {
+        .count__total {
+            border-top-right-radius: 0;
+            border-bottom-right-radius: 0;
+        }
+    }
+}
+
+.actions-list {
+    min-height: 60vh;
+
+    &__title {
+        display: flex;
+        align-items: center;
+        gap: $spacing-300;
+    }
 }
 
 .date-group {

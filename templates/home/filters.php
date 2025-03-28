@@ -11,7 +11,7 @@
                     name="agency" 
                     hx-get="/wp-admin/admin-ajax.php" 
                     hx-trigger="change" 
-                    hx-include="[name='document_type'], [name='action_status']"
+                    hx-include="[name='document_type'], [name='action_status'], [name='sub_component']"
                     hx-vals='{"action": "filter_actions"}'
                 >
                     <option value="">- Select -</option>
@@ -29,6 +29,21 @@
                         );
                     }
                     ?>
+                </select>
+            </div>
+
+            <div class="filter-detail disabled" id="sub-component-filter">
+                <label for="sub_component">Sub-Component</label>
+                <select 
+                    id="sub_component"
+                    name="sub_component" 
+                    hx-get="/wp-admin/admin-ajax.php" 
+                    hx-trigger="change" 
+                    hx-include="[name='document_type'], [name='action_status'], [name='agency']"
+                    hx-vals='{"action": "filter_actions"}'
+                    disabled
+                >
+                    <option value="">- Select -</option>
                 </select>
             </div>
 
@@ -87,6 +102,8 @@
                     ?>
                 </select>
             </div>
+
+
         </div>
 
         <button 

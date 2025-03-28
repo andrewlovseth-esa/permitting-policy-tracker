@@ -1,6 +1,10 @@
 // actions.js
+import { setupSubComponentFilter } from "./sub-components.js";
 
 export function setupActions() {
+    // Initialize sub-component filter
+    setupSubComponentFilter();
+
     // Use event delegation on document.body to handle clicks
     document.body.addEventListener("click", (event) => {
         // Check if click target is within an actions list item
