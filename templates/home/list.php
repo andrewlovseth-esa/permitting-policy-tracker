@@ -71,11 +71,8 @@
                     <h2 class="actions-list__title">
                         <span class="actions-list__title--text">List of Actions</span>
                         
-                        <span class="count">
-                            <span class="count__total">Total Actions: <?php echo $total_posts; ?></span>
-                            <?php if($query->found_posts !== $total_posts) : ?>
-                                <span class="count__filtered">Displaying <?php echo $query->found_posts; ?> Filtered <?php echo $query->found_posts === 1 ? 'Action' : 'Actions'; ?></span>
-                            <?php endif; ?>
+                        <span class="count <?php if($query->found_posts !== $total_posts) : ?>filtered<?php endif; ?>">
+                            <?php echo $query->found_posts; ?>
                         </span>
                     </h2>
                 </div>
