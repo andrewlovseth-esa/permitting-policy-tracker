@@ -11,8 +11,6 @@
     display: flex;
     font-size: 0.6125rem;
     font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 0.05em;
 
     span {
         line-height: 1;
@@ -25,11 +23,14 @@
         background-color: $orange;
         color: $gray-0;
         border-radius: $spacing-050;
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
     }
 
     &__filtered {
         background-color: $gray-0;
         color: $orange;
+        font-weight: 600;
         border-top-right-radius: $spacing-050;
         border-bottom-right-radius: $spacing-050;
     }
@@ -44,11 +45,41 @@
 
 .actions-list {
     min-height: 60vh;
+    position: relative;
+    transition: opacity 0.3s ease;
+
+    &.htmx-request {
+        opacity: 0.2;
+        pointer-events: none;
+
+        &::after {
+            content: "";
+            position: absolute;
+            top: 10%;
+            left: 50%;
+            transform: translate(-50%, 0);
+            width: 40px;
+            height: 40px;
+            border: 4px solid $gray-200;
+            border-top: 4px solid $teal;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+        }
+    }
 
     &__title {
         display: flex;
         align-items: center;
         gap: $spacing-300;
+    }
+}
+
+@keyframes spin {
+    0% {
+        transform: translate(-50%, -50%) rotate(0deg);
+    }
+    100% {
+        transform: translate(-50%, -50%) rotate(360deg);
     }
 }
 

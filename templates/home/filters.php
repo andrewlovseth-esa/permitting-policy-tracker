@@ -2,6 +2,7 @@
     <div class="filters__wrapper" 
         hx-target="#actions-list" 
         hx-swap="outerHTML"
+        hx-indicator="#actions-list"
     >
         <div class="filters__selects">
             <div class="filter-detail">

@@ -68,7 +68,7 @@
                         <span class="count">
                             <span class="count__total">Total Actions: <?php echo $total_posts; ?></span>
                             <?php if($query->found_posts !== $total_posts) : ?>
-                                <span class="count__filtered">Filtered Actions: <?php echo $query->found_posts; ?></span>
+                                <span class="count__filtered">Displaying <?php echo $query->found_posts; ?> Filtered <?php echo $query->found_posts === 1 ? 'Action' : 'Actions'; ?></span>
                             <?php endif; ?>
                         </span>
                     </h2>
