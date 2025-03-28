@@ -98,28 +98,7 @@
             "selected": 0
         },
         {
-            "key": "field_67dc43037a9bf",
-            "label": "Policies Rescinded",
-            "name": "policies_rescinded",
-            "aria-label": "",
-            "type": "wysiwyg",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "default_value": "",
-            "allow_in_bindings": 0,
-            "tabs": "all",
-            "toolbar": "full",
-            "media_upload": 0,
-            "delay": 0
-        },
-        {
-            "key": "field_67dc43197a9c0",
+            "key": "field_67e705a498d3f",
             "label": "Summary of Prior Policies",
             "name": "summary_of_prior_policies",
             "aria-label": "",
@@ -140,11 +119,11 @@
             "delay": 0
         },
         {
-            "key": "field_67dc43247a9c1",
-            "label": "Policy Directing Recission",
-            "name": "policy_directing_recission",
+            "key": "field_67e6ff5b18b50",
+            "label": "Rescinded Policies",
+            "name": "rescinded_policies",
             "aria-label": "",
-            "type": "wysiwyg",
+            "type": "relationship",
             "instructions": "",
             "required": 0,
             "conditional_logic": 0,
@@ -153,12 +132,21 @@
                 "class": "",
                 "id": ""
             },
-            "default_value": "",
+            "post_type": [
+                "rescinded-policy"
+            ],
+            "post_status": "",
+            "taxonomy": "",
+            "filters": [
+                "search"
+            ],
+            "return_format": "object",
+            "min": "",
+            "max": "",
             "allow_in_bindings": 0,
-            "tabs": "all",
-            "toolbar": "full",
-            "media_upload": 0,
-            "delay": 0
+            "elements": "",
+            "bidirectional": 0,
+            "bidirectional_target": []
         },
         {
             "key": "field_67dc43427a9c2",
@@ -215,5 +203,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1743009356
+    "modified": 1743193520
 }

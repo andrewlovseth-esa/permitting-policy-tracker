@@ -6,9 +6,9 @@
     $type = wp_get_object_terms(get_the_ID(), 'document-type')[0] ?? null;
     $link = get_field('external_link');    
     $summary = get_field('summary');
-    $policies_rescinded = get_field('policies_rescinded');
+
     $summary_of_prior_policies = get_field('summary_of_prior_policies');
-    $policy_directing_rescission = get_field('policy_directing_rescission');
+    $rescinded_policies = get_field('rescinded_policies');
     $likely_effects_of_current_policy = get_field('likely_effects_of_current_policy');
 ?>
 
@@ -80,35 +80,30 @@
                 <?php endif; ?>
             </div>
 
-            <?php if($policies_rescinded || $summary_of_prior_policies || $policy_directing_rescission || $likely_effects_of_current_policy) : ?>
+            <?php if($summary_of_prior_policies || $rescinded_policies || $likely_effects_of_current_policy) : ?>
                 <div class="action__analysis">
                     <h3 class="action__analysis-header | sub-header">Analysis</h3>
 
                     <div class="action__analysis-list">
-                        <?php if($policies_rescinded) : ?>
-                            <div class="action__detail">
-                                <h4 class="analysis-header">Policies Rescinded</h4>
-                                <div class="action__policies-rescinded | copy copy-2 flow">
-                                    <?php echo $policies_rescinded; ?>
-                                </div>
-                            </div>
-                        <?php endif; ?>
-
                         <?php if($summary_of_prior_policies) : ?>
                             <div class="action__detail">
                                 <h4 class="analysis-header">Summary of Prior Policies</h4>
                                 <div class="action__summary-of-prior-policies | copy copy-2 flow">
-                                    <?php echo $summary_of_prior_policies; ?>
+                                    <?php echo $summary_of_prior_policies; ?>       
                                 </div>
                             </div>
                         <?php endif; ?>
 
-                        <?php if($policy_directing_rescission) : ?>
+                        <?php if($rescinded_policies) : ?>
                             <div class="action__detail">
-                                <h4 class="analysis-header">Policy Directing Rescission</h4>
-                                <div class="action__policy-directing-rescission | copy copy-2 flow">
-                                    <?php echo $policy_directing_rescission; ?>      
+                                <h4 class="analysis-header">Policies Rescinded</h4>
+
+                                <div class="rescinded-policies">
+                                    <?php foreach($rescinded_policies as $policy) : ?>
+                                        <?php get_template_part('components/actions/rescinded-policy', null, ['policy' => $policy]); ?>
+                                    <?php endforeach; ?>
                                 </div>
+            
                             </div>
                         <?php endif; ?>
 

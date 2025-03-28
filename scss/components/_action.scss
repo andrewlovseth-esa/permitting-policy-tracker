@@ -131,12 +131,59 @@
 
         &-list {
             display: grid;
-            gap: $spacing-400;
+            gap: $spacing-600;
             align-items: start;
         }
 
         .analysis-header {
             padding-bottom: $spacing-100;
+        }
+
+        .rescinded-policy {
+            margin-top: $spacing-200;
+            background: $gray-0;
+            border: 1px solid $gray-200;
+            border-radius: $spacing-050;
+            padding: $spacing-400;
+
+            &__header {
+                padding-bottom: $spacing-200;
+                border-bottom: 1px solid $gray-200;
+                margin-bottom: $spacing-200;
+            }
+
+            &__title {
+                font-size: $type-size-200;
+                font-weight: 600;
+                color: $red;
+                display: grid;
+                grid-template-columns: 0.75rem 1fr;
+                align-items: start;
+                gap: $spacing-200;
+
+                svg {
+                    width: 0.75rem;
+                    height: 0.75rem;
+                    transform: translateY(1px);
+                    path {
+                        fill: $red;
+                    }
+                }
+            }
+
+            &__footer {
+                width: 100%;
+                text-align: right;
+
+                a {
+                    display: inline-flex;
+                    align-items: center;
+                    gap: $spacing-200;
+                    font-weight: 500;
+                    font-size: $type-size-200;
+                    text-decoration: underline;
+                }
+            }
         }
     }
 
