@@ -48,6 +48,7 @@
     min-height: 60vh;
     position: relative;
     transition: opacity 0.3s ease;
+    padding-top: $spacing-400;
 
     &.htmx-request {
         opacity: 0.2;
@@ -73,6 +74,11 @@
         align-items: center;
         gap: $spacing-300;
         flex-wrap: wrap;
+        font-size: $type-size-600;
+
+        @include mq(tablet) {
+            font-size: $type-size-700;
+        }
 
         &--text {
             white-space: nowrap;
