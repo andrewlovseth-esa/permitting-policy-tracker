@@ -1,6 +1,6 @@
 import gulp from "gulp";
 import gulpSass from "gulp-sass";
-import sass from "sass";
+import * as sass from "sass";
 import sourcemaps from "gulp-sourcemaps";
 import autoprefixer from "gulp-autoprefixer";
 import browserSyncPackage from "browser-sync";

@@ -24,15 +24,16 @@ export function setupActions() {
 
 export function rescindedPolicyToggle() {
     document.addEventListener("DOMContentLoaded", function () {
-        const rescindedPolicyToggles = document.querySelectorAll(".js-rescinded-policy-toggle");
-        const rescindedPolicyBodies = document.querySelectorAll(".js-rescinded-policy-body");
-
-        rescindedPolicyToggles.forEach((toggle, index) => {
-            toggle.addEventListener("click", function (e) {
-                e.preventDefault();
-                toggle.classList.toggle("open");
-                rescindedPolicyBodies[index].classList.toggle("open");
-            });
+        document.body.addEventListener("click", (event) => {
+            const toggle = event.target.closest(".js-rescinded-policy-toggle");
+            if (toggle) {
+                event.preventDefault();
+                const body = toggle.nextElementSibling;
+                if (body && body.classList.contains("js-rescinded-policy-body")) {
+                    toggle.classList.toggle("open");
+                    body.classList.toggle("open");
+                }
+            }
         });
     });
 }
