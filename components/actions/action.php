@@ -7,6 +7,8 @@
     $link = get_field('external_link');    
     $summary = get_field('summary');
 
+    $categories = get_the_category();
+
     $summary_of_prior_policies = get_field('summary_of_prior_policies');
     $rescinded_policies = get_field('rescinded_policies');
     $likely_effects_of_current_policy = get_field('likely_effects_of_current_policy');
@@ -121,6 +123,14 @@
         </div>
 
         <div class="action__footer">
+            <div class="action__footer-categories">
+                <?php if($categories) : ?>
+                    <?php foreach($categories as $category) : ?>
+                        <span class="action__category | badge"><?php echo $category->name; ?></span>
+                    <?php endforeach; ?>
+                <?php endif; ?>
+            </div>
+
             <p class="action__footer-date">Last Updated: <?php echo get_the_modified_date(); ?> at <?php echo get_the_modified_time(); ?></p>
         </div> 
     </div>

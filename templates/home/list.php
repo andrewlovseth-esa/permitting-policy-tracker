@@ -55,6 +55,11 @@
                 );
             }
 
+            // Add category filter if set
+            if(isset($_GET['category']) && !empty($_GET['category'])) {
+                $args['category_name'] = sanitize_text_field($_GET['category']);
+            }
+
             // Add tax query to args if we have any filters
             if(!empty($tax_query)) {
                 $args['tax_query'] = array(

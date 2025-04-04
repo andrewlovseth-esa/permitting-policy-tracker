@@ -155,12 +155,19 @@
 
     &__footer {
         display: flex;
-        justify-content: flex-end;
+        justify-content: space-between;
         padding-top: $spacing-500;
         border-top: 1px solid $gray-200;
 
         @include mq(tablet) {
             padding-top: $spacing-300;
+        }
+
+        &-categories {
+            display: flex;
+            gap: $spacing-200;
+            flex-wrap: wrap;
+            max-width: 50%;
         }
 
         &-date {

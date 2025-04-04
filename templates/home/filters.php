@@ -19,6 +19,33 @@
         <div class="filters__body closed js-filter-body">
             <div class="filters__selects">
                 <div class="filter-detail">
+                    <label for="category">Category</label>
+                    <select 
+                        id="category"
+                        name="category" 
+                        hx-get="/wp-admin/admin-ajax.php" 
+                        hx-trigger="change" 
+                        hx-include="[name='document_type'], [name='action_status'], [name='agency'], [name='sub_component'], [name='keyword']"
+                        hx-vals='{"action": "filter_actions"}'
+                    >
+                        <option value="">- Select -</option>
+                        <?php
+                        $categories = get_categories(array(
+                            'hide_empty' => true,
+                            'exclude' => 1 // Assuming 'Uncategorized' has ID 1
+                        ));
+                        
+                        foreach($categories as $category) {
+                            echo sprintf(
+                                '<option value="%s">%s</option>',
+                                esc_attr($category->slug),
+                                esc_html($category->name)
+                            );
+                        }
+                        ?>
+                    </select>
+                </div>
+                <div class="filter-detail">
                     <label for="agency">Agency</label>
                     <select 
                         id="agency"
@@ -62,7 +89,7 @@
                 </div>
 
                 <div class="filter-detail">
-                    <label for="document_type">Type</label>
+                    <label for="document_type">Document Type</label>
                     <select 
                         id="document_type"
                         name="document_type" 
@@ -117,7 +144,9 @@
                     </select>
                 </div>
 
-                <div class="filter-detail">
+
+
+                <div class="filter-detail search">
                     <label for="keyword-search">Search</label>
                     <input 
                         type="text" 
