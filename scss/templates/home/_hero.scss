@@ -38,12 +38,14 @@
 
         @include mq(desktop-small) {
             grid-column: 2 / span 8;
+            padding: $spacing-600;
         }
     }
 
     &__headline {
-        color: $teal;
-        font-size: $type-size-600;
-        padding-bottom: $spacing-200;
+        color: $gray-1000;
+        font-size: $type-size-800;
+        font-weight: 600;
+        padding-bottom: $spacing-400;
     }
 }

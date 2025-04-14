@@ -16,7 +16,7 @@
     z-index: 1000;
 
     @include mq(desktop-small) {
-        padding: $spacing-600 0;
+        padding: 35px 0;
     }
 
     &__wrapper {
