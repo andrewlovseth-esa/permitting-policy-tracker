@@ -152,7 +152,7 @@
                         type="text" 
                         id="keyword-search" 
                         name="keyword" 
-                        placeholder="Search..."
+                        placeholder="Search action titles by keyword..."
                         hx-get="/wp-admin/admin-ajax.php"
                         hx-trigger="keyup changed delay:200ms"
                         hx-include="[name='document_type'], [name='action_status'], [name='agency'], [name='sub_component']"
